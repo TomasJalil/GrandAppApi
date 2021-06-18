@@ -21,7 +21,6 @@ async function newTema(tema){
     try{
         let pool = await sql.connect(cnx);
         let newTema = await pool.request()
-        .input('idTema',sql.Int, temas.idTema_Temas)
         .input('nombre',sql.Text, temas.nombre_Temas)
         .execute('pr_newTema');
         

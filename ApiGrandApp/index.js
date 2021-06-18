@@ -27,7 +27,7 @@ router.route('/temas').get((request,response)=>{
 //Ruta para insertar un tema
 router.route('/tema/nuevo').post((request,response)=>{
     let tema={...request.body}
-    TemasWS.newTema(temas).then(result => {
+    TemasWS.newTema(tema).then(result => {
         response.json(result[0])
     })
 });
