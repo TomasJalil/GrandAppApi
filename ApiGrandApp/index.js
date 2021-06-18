@@ -32,6 +32,11 @@ router.route('/tema/nuevo').post((request,response)=>{
     })
 });
 
+router.route('/videos/:temaVideo').get((request,response)=>{
+    VideosWS.getVideos(request.params.temaVideo).then(result => {
+        response.json(result[0])
+    })
+});
 
 
 var portcnx = process.env.PORT || 5000;
