@@ -1,9 +1,9 @@
-class temas{ 
+class Temas{ 
     constructor(
-        nombre_Temas
+        nombre
         ){
-        this.nombre_Temas 
+        this.nombre 
        
     } 
 }
-module.exports = temas;
+module.exports = Temas;
