@@ -3,6 +3,8 @@ console.log('inicio del proceso');
 const TemasWS = require('./TemasWS');
 const Temas = require('./Temas');
 
+const UsuarioWs=require('./UsuarioWs');
+const Usuario=require('./Usuario');
 
 var express = require('express');
 var cors=require('cors');
@@ -36,7 +38,23 @@ router.route('/temas/nuevo').post((request, response)=>{
         response.json(err.message);
     }
 });
+//Ruta para insertar nuevo usuario
+router.route('/user/nuevo').post((request, response)=>{
+    let usuario={...request.body}
+    UsuarioWs.newUsuario(usuario).then(result => {
+        response.json('se ha registrado correctamente');
+    });(err)=>{
+        console.log(err.message);
+        response.json(err.message);
+    }
+});
 
+//Ruta para obtener los temas
+router.route('/user').get((request, response)=>{
+    UsuarioWs.getUsuarios().then(result => {
+        response.json(result[0])
+    }) 
+});
 
 // Ruta para obtener todos los videos
 router.route('/videos').get((request, response)=>{
