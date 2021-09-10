@@ -1,8 +1,9 @@
+require('dotenv').config()
 const cnx={
-    user:'Api',
-    password:'admin',
-    server:'DESKTOP-74BV394',
-    database:'GRANDAPP',
+    user: process.env.DB_USER,
+    password:process.env.DB_PASSWORD,
+    server:process.env.DB_SERVER,
+    database:process.env.DB_DATABASE,
     port: 1433,
     dialect: "mssql",
     

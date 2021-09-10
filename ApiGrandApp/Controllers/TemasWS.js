@@ -1,6 +1,6 @@
-const cnx = require('./cnx');
+const cnx = require('../cnx');
 const sql = require('mssql');
-const temas = require('./temas');
+const temas = require('../Models/temas');
 
 //Trae listado de tema
 
